@@ -411,10 +411,10 @@ def project_add(request):
             # memberformset.member_project = projectform
             # memberformset.save()
 	    
-	#    for form1 in mentorformset.forms:
-         #       mentorform = form1.save(commit=False)
-          #      mentorform.mentor_project = projectform
-           #     mentorform.save()
+	    for form1 in mentorformset.forms:
+                mentorform = form1.save(commit=False)
+                mentorform.mentor_project = projectform
+                mentorform.save()
            
             messages.success(request, "Project successfully submitted. Waiting for approval.")
             return HttpResponseRedirect('/ac/project/add/')
